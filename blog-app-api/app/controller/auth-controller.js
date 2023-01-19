@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 /*------------------------------------------
     Enabling Security Measures
 --------------------------------------------*/
-app.use(function (req, res, next) {
+/*app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -38,7 +38,7 @@ app.use(function (req, res, next) {
 
     // Pass to next layer of middleware
     next();
-});
+});*/
 
 /*------------------------------------------
     enable files upload

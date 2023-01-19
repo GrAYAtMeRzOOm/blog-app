@@ -10,7 +10,8 @@ const app = express();
     JWT Secret token
 ---------------------------------------------*/
 app.set('secretKey', 'BlogAppApiNodeJs');
-app.use(cors());
+cors = require('cors');
+app.use(cors({origin: '*'}));
 
 /*-------------------------------------------
     Adding other routes
@@ -19,6 +20,7 @@ const user = require('./app/controller/user-controller');
 const blog = require('./app/controller/blog-controller');
 const auth = require('./app/controller/auth-controller');
 const assert = require('./app/controller/assert-controller');
+const csv = require('./app/controller/csv-controller');
 
 //private routes
 app.use('/api/user',validateUser,user);
@@ -26,6 +28,7 @@ app.use('/api/blog',validateUser,blog);
 //public routes
 app.use('/api/auth',auth);
 app.use('/assert',assert);
+app.use('/api/csv',csv);
 
 /*------------------------------------------
     Server listening
